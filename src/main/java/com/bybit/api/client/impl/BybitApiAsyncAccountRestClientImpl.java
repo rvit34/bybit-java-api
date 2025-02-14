@@ -27,6 +27,12 @@ public class BybitApiAsyncAccountRestClientImpl implements BybitApiAsyncAccountR
     }
 
     @Override
+    public void getTransferableAmount(AccountDataRequest transferableAmountRequest, BybitApiCallback<Object> callback) {
+        bybitApiService.getWithdrawal(transferableAmountRequest.getCoin())
+                .enqueue(new BybitApiCallbackAdapter<>(callback));
+    }
+
+    @Override
     public void upgradeAccountToUTA(BybitApiCallback<Object> callback) {
         bybitApiService.upgradeAccountToUTA().enqueue(new BybitApiCallbackAdapter<>(callback));
     }

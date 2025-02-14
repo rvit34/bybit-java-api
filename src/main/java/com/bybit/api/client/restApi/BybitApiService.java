@@ -2874,6 +2874,17 @@ public interface BybitApiService {
                                   @Query("coin") String coin);
 
     /**
+     * Query the available amount to transfer of a specific coin in the Unified wallet.
+     * @param coin  true string	Coin name, uppercase only
+     * @return Response Parameters
+     *   Parameter	Type	Comments
+     *   &gt; availableWithdrawal	String Transferable amount
+     */
+    @Headers(BybitApiConstants.ENDPOINT_SECURITY_TYPE_SIGNED_HEADER)
+    @GET("/v5/account/withdrawal")
+    Call<Object> getWithdrawal(@Query("coinName") String coin);
+
+    /**
      * Upgrade to Unified Account
      * Upgrade Unified Account
      * <p>

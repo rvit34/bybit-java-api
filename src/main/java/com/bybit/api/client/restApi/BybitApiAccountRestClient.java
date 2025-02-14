@@ -6,6 +6,7 @@ import com.bybit.api.client.domain.account.request.BatchSetCollateralCoinRequest
 public interface BybitApiAccountRestClient {
     // Account endpoints
     Object getWalletBalance(AccountDataRequest walletBalanceRequest);
+    Object getTransferableAmount(AccountDataRequest transferableAmountRequest);
     Object upgradeAccountToUTA();
     Object getAccountBorrowHistory(AccountDataRequest borrowHistoryRequest);
     Object setAccountCollateralCoin(AccountDataRequest setCollateralCoinRequest);

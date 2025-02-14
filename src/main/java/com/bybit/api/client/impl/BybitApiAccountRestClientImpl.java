@@ -26,6 +26,11 @@ public class BybitApiAccountRestClientImpl implements BybitApiAccountRestClient 
     }
 
     @Override
+    public Object getTransferableAmount(AccountDataRequest transferableAmountRequest) {
+        return executeSync(bybitApiService.getWithdrawal(transferableAmountRequest.getCoin()));
+    }
+
+    @Override
     public Object upgradeAccountToUTA() {
         return executeSync(bybitApiService.upgradeAccountToUTA());
     }
